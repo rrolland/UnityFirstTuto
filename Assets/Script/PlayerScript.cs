@@ -72,6 +72,13 @@ public class PlayerScript : MonoBehaviour {
 		rigidbody2D.velocity = movement;
 	}
 
+    void OnDestroy()
+    {
+        // Game Over.
+        // Add the script to the parent because the current game
+        // object is likely going to be destroyed immediately.
+        transform.parent.gameObject.AddComponent<GameOverScript>();
+    }
 
     void OnCollisionEnter2D(Collision2D collision)
     {

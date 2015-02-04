@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11493678}
   - 114: {fileID: 11440740}
   m_Layer: 0
-  m_Name: projectile
+  m_Name: PlayerShot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,7 +82,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 297f1464ad2aa254488126c1f93e201c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: {x: 10, y: 10}
+  speed: {x: 20, y: 20}
   direction: {x: -1, y: 0}
 --- !u!212 &21290842
 SpriteRenderer:

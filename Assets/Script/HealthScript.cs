@@ -15,6 +15,9 @@ public class HealthScript : MonoBehaviour {
         {
             // Dead
             Debug.Log("Dead");
+
+            SpecialEffectsHelper.Instance.Explosion(transform.position);
+
             Destroy(gameObject);
         }
     }

@@ -777,6 +777,7 @@ MonoBehaviour:
   speed: {x: 2.5, y: 2.5}
   direction: {x: -1, y: 0}
   isLinkedToCamera: 0
+  isLooping: 0
 --- !u!1 &486289386
 GameObject:
   m_ObjectHideFlags: 0
@@ -1191,6 +1192,7 @@ MonoBehaviour:
   speed: {x: 1, y: 1}
   direction: {x: 1, y: 0}
   isLinkedToCamera: 1
+  isLooping: 0
 --- !u!1 &869459331
 GameObject:
   m_ObjectHideFlags: 0
@@ -1652,6 +1654,7 @@ MonoBehaviour:
   speed: {x: 1.5, y: 1.5}
   direction: {x: -1, y: 0}
   isLinkedToCamera: 0
+  isLooping: 0
 --- !u!1 &1518047208
 GameObject:
   m_ObjectHideFlags: 0
@@ -2064,3 +2067,4 @@ MonoBehaviour:
   speed: {x: 1, y: 1}
   direction: {x: -1, y: 0}
   isLinkedToCamera: 0
+  isLooping: 1

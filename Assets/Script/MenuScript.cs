@@ -17,12 +17,26 @@ public class MenuScript : MonoBehaviour {
               buttonHeight
             );
 
+        Rect buttonRect2 = new Rect(
+              Screen.width / 2 - (buttonWidth / 2),
+              (1 * Screen.height / 3) - (buttonHeight / 2),
+              buttonWidth,
+              buttonHeight
+            );
+
         // Draw a button to start the game
         if (GUI.Button(buttonRect, "Start!"))
         {
             // On Click, load the first level.
             // "Stage1" is the name of the first scene we created.
             Application.LoadLevel("Stage1");
+        }
+
+        // Draw a button to close the game
+        if (GUI.Button(buttonRect2, "Close!"))
+        {
+            // On Click, quit the app.
+            Application.Quit();
         }
     }
 }

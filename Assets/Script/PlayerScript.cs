@@ -7,6 +7,7 @@ public class PlayerScript : MonoBehaviour {
 	public Vector2 speed = new Vector2 (50, 50);
 	
 	private Vector2 movement;
+   // private int playerOffsetX = 100;
 
 	// Use this for initialization
 	void Start () {
@@ -15,15 +16,22 @@ public class PlayerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
-		//retrive axis info
-		float inputX = Input.GetAxis("Horizontal");
-		float inputY = Input.GetAxis ("Vertical");
 
-		//Movement per direction
-		movement = new Vector2 (
-			speed.x * inputX,
-			speed.y * inputY);
+
+         // Look for all fingers
+        for (int i = 0; i < Input.touchCount; i++)
+        {
+            Touch touch = Input.GetTouch(i);
+
+            // -- Tap: quick touch & release
+            // ------------------------------------------------
+         
+            if (touch.phase == TouchPhase.Stationary || touch.phase == TouchPhase.Moved) {
+             // If the finger is on the screen, move the object smoothly to the touch position
+             Vector3 touchPosition = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x + 100, touch.position.y, 10));                
+             transform.position = Vector3.Lerp(transform.position, touchPosition, Time.deltaTime * speed.x);
+            }
+        }
 
         // Shooting
         bool shoot = Input.GetButton("Fire1");
@@ -69,7 +77,7 @@ public class PlayerScript : MonoBehaviour {
 	void FixedUpdate()
 	{
 		//move game object
-		rigidbody2D.velocity = movement;
+		GetComponent<Rigidbody2D>().velocity = movement;
 	}
 
     void OnDestroy()
